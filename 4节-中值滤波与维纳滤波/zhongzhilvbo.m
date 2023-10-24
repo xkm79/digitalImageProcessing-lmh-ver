@@ -1,42 +1,46 @@
-%%%%%%%%%%%%%%%%% Ó°ÊÓ¹¤³ÌÏµÊý×ÖÍ¼Ïñ´¦Àí¿Î³ÌÊµÑé£ºÊµÑé7 ÖÐÖµÂË²¨medfilt2º¯ÊýÊµÀý2%%%%%%%%%%%%%%%%%%%%%%%%
-% I=imread('QiuShengQuan.jpg');
-% I=rgb2gray(I);
-% subplot(2,2,1); 
-% imshow (I);title('Original Image');
-% J=imnoise(I,'salt & pepper',0.02);  %Ìí¼ÓÑÎ½·ÔëÉù£¬ÔëÉùÃÜ¶ÈÎª0.02
-% subplot(2,2,2);imshow(J);title('Ìí¼Ó½·ÑÎÔëÉù');
-% K = medfilt2(J);              %ÔÚÄ¬ÈÏµÄ3¡Á3µÄÁÚÓò´°ÖÐ½øÐÐÖÐÖµÂË²¨
-% subplot(2,2,3);imshow(K);title('ÖÐÖµÂË²¨ºóµÄ½á¹û');
-% K1 = wiener2(J,[3 3]);%Î¬ÄÉÂË²¨
-% subplot(2,2,4);imshow(K1);title('Î¬ÄÉÂË²¨ºóµÄ½á¹û');
-%Ë¼¿¼Ìâ£º 1¡¢±È½ÏÔ­Í¼ºÍÖÐÖµÂË²¨ºóµÄÍ¼ÏñÖ®¼äµÄÇø±ð£¬±È½ÏÎ¬ÄÉÂË²¨ºÍÖÐÖµÂË²¨µÄ´¦ÀíÐ§¹û£¬²¢¼ÇÂ¼ÔÚÊµÑé±¾ÉÏ
-%        2¡¢°´ÕÕÊéÉÏµÄËã·¨×ÔÖ÷±àÐ´ÖÐÖµÂË²¨º¯Êý¡£
-% ²Î¿¼ÈçÏÂ£º
-I=imread('QiuShengQuan.JPG');
-imshow(I);
-J=imnoise(I,'salt & pepper',0.02);
-figure,imshow(J);title('¼ÓÔëÉùÍ¼');
-figure;
-[A,map]=imread('QiuShengQuan.JPG');        
-imshow(A,map);                       
-title('Ô­Í¼');
-image=double(A);
-u=zeros(1,9);
-for i=2:255
-    for j=2:255
-        u(1)=image(i,j);u(2)=image(i, j+1);u(3)=image(i-1,j+1);
-        u(4)=image(i-1,j);u(5)=image(i-1,j-1);u(6)=image(i,j-1);
-        u(7)=image(i+1,j-1);u(8)=image(i+1,j);u(9)=image(i+1,j+1);
-        for p=1:8
-            for q=1:8-p
-                if u(q)>u(q+1)
-                    k=u(q);u(q)=u(q+1);u(q+1)=k;
-                end
-            end
-        end
-        rimage(i,j)=u(5);
-    end
-end
-figure;
-imshow(rimage,map);
-title('ÖÐÖµÂË²¨');
+%%%%%%%%%%%%%%%%% å½±è§†å·¥ç¨‹ç³»æ•°å­—å›¾åƒå¤„ç†è¯¾ç¨‹å®žéªŒï¼šå®žéªŒ7 ä¸­å€¼æ»¤æ³¢medfilt2å‡½æ•°å®žä¾‹2%%%%%%%%%%%%%%%%%%%%%%%%
+I=imread('QiuShengQuan.jpg');
+I=rgb2gray(I);
+subplot(2,2,1); 
+imshow (I);title('Original Image');
+J=imnoise(I,'salt & pepper',0.02);  %æ·»åŠ ç›æ¤’å™ªå£°ï¼Œå™ªå£°å¯†åº¦ä¸º0.02
+subplot(2,2,2);imshow(J);title('æ·»åŠ æ¤’ç›å™ªå£°');
+K = medfilt2(J);              %åœ¨é»˜è®¤çš„3Ã—3çš„é‚»åŸŸçª—ä¸­è¿›è¡Œä¸­å€¼æ»¤æ³¢
+subplot(2,2,3);imshow(K);title('ä¸­å€¼æ»¤æ³¢åŽçš„ç»“æžœ');
+K1 = wiener2(J,[3 3]);%ç»´çº³æ»¤æ³¢
+subplot(2,2,4);imshow(K1);title('ç»´çº³æ»¤æ³¢åŽçš„ç»“æžœ');
+%æ€è€ƒé¢˜ï¼š 1ã€æ¯”è¾ƒåŽŸå›¾å’Œä¸­å€¼æ»¤æ³¢åŽçš„å›¾åƒä¹‹é—´çš„åŒºåˆ«ï¼Œæ¯”è¾ƒç»´çº³æ»¤æ³¢å’Œä¸­å€¼æ»¤æ³¢çš„å¤„ç†æ•ˆæžœï¼Œå¹¶è®°å½•åœ¨å®žéªŒæœ¬ä¸Š
+
+%%%ç»´çº³æ»¤æ³¢åŽåŽ»é™¤äº†ä¸€éƒ¨åˆ†æ¤’ç›å™ªå£°ï¼Œä½†æ•ˆæžœæ²¡æœ‰ä¸­å€¼æ»¤æ³¢æ˜¾è‘—ï¼Œä¸­å€¼æ»¤æ³¢æ»¤é™¤äº†ä¸€äº›å›¾åƒç»†èŠ‚ã€‚
+
+%        2ã€æŒ‰ç…§ä¹¦ä¸Šçš„ç®—æ³•è‡ªä¸»ç¼–å†™ä¸­å€¼æ»¤æ³¢å‡½æ•°ã€‚
+% å‚è€ƒå¦‚ä¸‹ï¼š
+% I=imread('QiuShengQuan.JPG');
+% imshow(I);
+% J=imnoise(I,'salt & pepper',0.02);
+% figure,imshow(J);title('åŠ å™ªå£°å›¾');
+% figure;
+% [h,w,c]=size(I);
+% [A,map]=imread('QiuShengQuan.JPG');        
+% imshow(A,map);                       
+% title('åŽŸå›¾');
+% image=double(A);
+% u=zeros(1,9);
+% for i=2:h-1
+%     for j=2:w-1
+%         u(1)=image(i,j);u(2)=image(i, j+1);u(3)=image(i-1,j+1);
+%         u(4)=image(i-1,j);u(5)=image(i-1,j-1);u(6)=image(i,j-1);
+%         u(7)=image(i+1,j-1);u(8)=image(i+1,j);u(9)=image(i+1,j+1);
+%         for p=1:8
+%             for q=1:8-p
+%                 if u(q)>u(q+1)
+%                     k=u(q);u(q)=u(q+1);u(q+1)=k;
+%                 end
+%             end
+%         end
+%         rimage(i,j)=u(5);
+%     end
+% end
+% figure;
+% imshow(rimage,map);
+% title('ä¸­å€¼æ»¤æ³¢');
