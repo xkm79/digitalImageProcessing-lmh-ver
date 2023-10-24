@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%% Ó°ÊÓ¹¤³ÌÏµÊý×ÖÍ¼Ïñ´¦Àí¿Î³ÌÊµÑé£º ÊµÑé3 Í¼Ïñ´¹Ö±¾µÏñ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% å½±è§†å·¥ç¨‹ç³»æ•°å­—å›¾åƒå¤„ç†è¯¾ç¨‹å®žéªŒï¼š å®žéªŒ3 å›¾åƒåž‚ç›´é•œåƒ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % clear;
-% I1=imread('PingGuo.jpg');%%¶ÁÈ¡
+% I1=imread('PingGuo.jpg');%%è¯»å–
 % subplot(1,2,1);
 % imshow(I1);%%
 % I2=I1;
@@ -12,24 +12,24 @@
 % end
 % T=[-1 0 w/3;
 %    0 1 0;
-%    0 0 1]%Éè¶¨¾µÏñ·´×ª¾ØÕó
+%    0 0 1]%è®¾å®šé•œåƒåè½¬çŸ©é˜µ
 % for i=1:1:w/3
 %   for j=1:1:h
-%      OLocation = [i;j;1];%×éºÏÔ­Ê¼Î»ÖÃ¾ØÕó
-%         NLocation= int16( T*OLocation );%¼ÆËãÄ¿±êÎ»ÖÃ¾ØÕó
-%         if ( (NLocation(1)>1)&&(NLocation(1)<w/3)&&(NLocation(2)>1)&&(NLocation(2)<h) )%Ô¤·À×ø±êÒç³öÍ¼ÏñÊý×é·¶Î§
-%           I2(j,i,1)=I1( NLocation(2),NLocation(1),1 );%ºìÉ«·ÖÁ¿Ëõ·Å
-%           I2(j,i,2)=I1( NLocation(2),NLocation(1),2 );%ÂÌÉ«·ÖÁ¿Ëõ·Å
-%           I2(j,i,3)=I1( NLocation(2),NLocation(1),3 );%À¶É«·ÖÁ¿Ëõ·Å
+%      OLocation = [i;j;1];%ç»„åˆåŽŸå§‹ä½ç½®çŸ©é˜µ
+%         NLocation= int16( T*OLocation );%è®¡ç®—ç›®æ ‡ä½ç½®çŸ©é˜µ
+%         if ( (NLocation(1)>1)&&(NLocation(1)<w/3)&&(NLocation(2)>1)&&(NLocation(2)<h) )%é¢„é˜²åæ ‡æº¢å‡ºå›¾åƒæ•°ç»„èŒƒå›´
+%           I2(j,i,1)=I1( NLocation(2),NLocation(1),1 );%çº¢è‰²åˆ†é‡ç¼©æ”¾
+%           I2(j,i,2)=I1( NLocation(2),NLocation(1),2 );%ç»¿è‰²åˆ†é‡ç¼©æ”¾
+%           I2(j,i,3)=I1( NLocation(2),NLocation(1),3 );%è“è‰²åˆ†é‡ç¼©æ”¾
 %         end
 %    end
 % end
 % subplot(1,2,2);imshow(I2);
 
-%%%%%%%%%%%%Ë¼¿¼Ìâ1£º½øÐÐÍ¼ÏñË®Æ½¾µÏñµÄ³ÌÐòÉè¼Æ%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%æ€è€ƒé¢˜1ï¼šè¿›è¡Œå›¾åƒæ°´å¹³é•œåƒçš„ç¨‹åºè®¾è®¡%%%%%%%%%%%%%%%%%%%%
 
 % clear;
-% I1=imread('PingGuo.jpg');%%¶ÁÈ¡
+% I1=imread('PingGuo.jpg');%%è¯»å–
 % subplot(1,2,1);
 % imshow(I1);%%
 % I2=I1;
@@ -41,28 +41,29 @@
 % end
 % T=[1 0 0;
 %    0 -1 h;
-%    0 0 1]%Éè¶¨¾µÏñ·´×ª¾ØÕó
+%    0 0 1]%è®¾å®šé•œåƒåè½¬çŸ©é˜µ
 % for i=1:1:w/3
 %   for j=1:1:h
-%      OLocation = [i;j;1];%×éºÏÔ­Ê¼Î»ÖÃ¾ØÕó
-%         NLocation= int16( T*OLocation );%¼ÆËãÄ¿±êÎ»ÖÃ¾ØÕó
-%         if ( (NLocation(1)>1)&&(NLocation(1)<w/3)&&(NLocation(2)>1)&&(NLocation(2)<h) )%Ô¤·À×ø±êÒç³öÍ¼ÏñÊý×é·¶Î§
-%           I2(j,i,1)=I1( NLocation(2),NLocation(1),1 );%ºìÉ«·ÖÁ¿Ëõ·Å
-%           I2(j,i,2)=I1( NLocation(2),NLocation(1),2 );%ÂÌÉ«·ÖÁ¿Ëõ·Å
-%           I2(j,i,3)=I1( NLocation(2),NLocation(1),3 );%À¶É«·ÖÁ¿Ëõ·Å
+%      OLocation = [i;j;1];%ç»„åˆåŽŸå§‹ä½ç½®çŸ©é˜µ
+%         NLocation= int16( T*OLocation );%è®¡ç®—ç›®æ ‡ä½ç½®çŸ©é˜µ
+%         if ( (NLocation(1)>1)&&(NLocation(1)<w/3)&&(NLocation(2)>1)&&(NLocation(2)<h) )%é¢„é˜²åæ ‡æº¢å‡ºå›¾åƒæ•°ç»„èŒƒå›´
+%           I2(j,i,1)=I1( NLocation(2),NLocation(1),1 );%çº¢è‰²åˆ†é‡ç¼©æ”¾
+%           I2(j,i,2)=I1( NLocation(2),NLocation(1),2 );%ç»¿è‰²åˆ†é‡ç¼©æ”¾
+%           I2(j,i,3)=I1( NLocation(2),NLocation(1),3 );%è“è‰²åˆ†é‡ç¼©æ”¾
 %         end
 %    end
 % end
 % subplot(1,2,2);imshow(I2);
 
-%%%%%%%%%%%%Ë¼¿¼Ìâ2£ºmatlabÄÚ²¿ÊÇ·ñÓÐÍ¼Ïñ¾µÏñº¯Êý£¿²¢ÔÚGUIÄÚÊµÏÖ¾µÏñ¹¦ÄÜ%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%æ€è€ƒé¢˜2ï¼šmatlabå†…éƒ¨æ˜¯å¦æœ‰å›¾åƒé•œåƒå‡½æ•°ï¼Ÿå¹¶åœ¨GUIå†…å®žçŽ°é•œåƒåŠŸèƒ½%%%%%%%%%%%%%%%%%
 
 clear;
-I1=imread('PingGuo.jpg');%%¶ÁÈ¡
-subplot(1,2,1);
+I1=imread('PingGuo.jpg');%%è¯»å–
+subplot(1,3,1);
 imshow(I1);%%
-I2=fliplr(I1);%%Ë®Æ½¾µÏñ
-I2=flipud(I1);%%´¹Ö±¾µÏñ
-subplot(1,2,2);imshow(I2);
+I2=fliplr(I1);%%æ°´å¹³é•œåƒ
+subplot(1,3,2);imshow(I2);
+I2=flipud(I1);%%åž‚ç›´é•œåƒ
+subplot(1,3,3);imshow(I2);
 
-%%%GUI¼ûuntitled.m
+%%%GUIè§untitled.m
