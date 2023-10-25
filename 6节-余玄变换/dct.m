@@ -1,44 +1,32 @@
-%%%%%%%%%%%%%%%%% Ó°ÊÓ¹¤³ÌÏµÊı×ÖÍ¼Ïñ´¦Àí¿Î³ÌÊµÑé£ºÊµÑé9 DCT±ä»»ÊµÀı%%%%%%%%%%%%%%%%%%%%%%%%
-% clear;
-% RGB = imread('PingGuo.jpg');
-% I = rgb2gray(RGB);
-% J = dct2(I);
-% subplot(2,2,1);imshow(I);
-% subplot(2,2,2);imshow(log(abs(J)),[])
-% [h w]=size(RGB);
-% for i=180:1:w/3
-%     for j=1:1:h
-%         J(j,i)=0;
-%     end
-% end
-% for i=1:1:w/3
-%     for j=180:1:h
-%         J(j,i)=0;
-%     end
-% end
-% subplot(2,2,3);imshow(log(abs(J)),[])
-% K = idct2(J);
-% subplot(2,2,4);imshow(K,[0 255])
-%%%%%%%%%%%%%Ë¼¿¼Ìâ1£ºÀûÓÃDCTÊµÏÖÍ¼ÏñµÄ¸ßÍ¨Õ¶¶ÏÂË²¨¹¦ÄÜ%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% å½±è§†å·¥ç¨‹ç³»æ•°å­—å›¾åƒå¤„ç†è¯¾ç¨‹å®éªŒï¼šå®éªŒ9 DCTå˜æ¢å®ä¾‹%%%%%%%%%%%%%%%%%%%%%%%%
+clear;
+RGB = imread('PingGuo.jpg');
+I = rgb2gray(RGB);
+J = dct2(I);
+subplot(2,2,1);imshow(I);
+subplot(2,2,2);imshow(log(abs(J)),[])
+[h w]=size(RGB);
+for i=180:1:w/3
+    for j=1:1:h
+        J(j,i)=0;
+    end
+end
+for i=1:1:w/3
+    for j=180:1:h
+        J(j,i)=0;
+    end
+end
+subplot(2,2,3);imshow(log(abs(J)),[])
+K = idct2(J);
+subplot(2,2,4);imshow(K,[0 255])
+%%%%%%%%%%%%%æ€è€ƒé¢˜1ï¼šåˆ©ç”¨DCTå®ç°å›¾åƒçš„é«˜é€šæ–©æ–­æ»¤æ³¢åŠŸèƒ½%%%%%%%%%%%%%%%%%%%
 
-% RGB = imread('PingGuo.jpg');
-% I = rgb2gray(RGB);
-% J = dct2(I);
-% subplot(2,2,1);imshow(I);
-% subplot(2,2,2);imshow(log(abs(J)),[])
-% for i=1:1:100
-%     for j=1:1:100
-%         J(j,i)=0;
-%     end
-% end
-% subplot(2,2,3);imshow(log(abs(J)),[])
-% K = idct2(J);
-% subplot(2,2,4); imshow(K,[0 125])
+%%%åŒä¸Šï¼Œé«˜é€šæ–©æ–­å³ä½é€šæ»¤æ³¢
 
-%%%%%%%%%%%%%Ë¼¿¼Ìâ2£ºµ÷Õû²ÎÊı£¬¹Û²ì²ÎÊı¶Ô½á¹ûµÄÓ°Ïì²¢¼ÇÂ¼ÊµÑé½á¹û%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%æ€è€ƒé¢˜2ï¼šè°ƒæ•´å‚æ•°ï¼Œè§‚å¯Ÿå‚æ•°å¯¹ç»“æœçš„å½±å“å¹¶è®°å½•å®éªŒç»“æœ%%%%%%%%%%%%%%%%%%%
 
 clear;
-f=50;%%ĞŞ¸ÄÕâÀï
+f=50;%%ä¿®æ”¹è¿™é‡Œ
 RGB = imread('PingGuo.jpg');
 I = rgb2gray(RGB);
 J = dct2(I);
